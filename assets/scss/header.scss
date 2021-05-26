@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    a{
+        cursor: pointer;
+    }
+    #header-section{
+        display:flex;
+	    align-items: center;
+	    margin-top:3px;
+	    justify-content: space-between;
+	    position: sticky;
+	    top:0%;
+	    /*background-color: rgb(12,14,40);*/
+	    background-color: rgb(112, 54, 64);
+        margin-bottom:50px;
+        height:60px;
+
+        #header1{
+            display: flex;
+            // border: 1px solid black;
+            margin-left:3%;
+            align-items: center;
+            justify-content: space-around;
+            width:40%;
+            #app-name{
+                a{
+                    text-decoration: none;
+                    color: white;
+                    // font-family:
+                    font-family: sans-serif;
+                    background-color: palevioletred;
+                    // color:white;
+                    font-size:1.2rem;
+                    outline: none;
+                    cursor: pointer;
+                    border:none;
+                }
+            }
+            #search-bar{
+                margin-top:2.5%;
+            }
+        }
+        
+        #sign-links{
+            display: flex;
+            // border: 1px solid black;
+            margin-right:1%;
+            width:24%;
+            justify-content: space-around;
+            margin-top:-1%;
+            button{
+                    margin-top: 0.5rem;
+                    // border-radius:3%;
+                    width: 4rem;
+                    padding: 0.2rem;
+                    font-size: 0.7rem;
+                    // outline: blueviolet;
+                    font-family: sans-serif;
+                    outline-color:black;
+                    
+                    color:white;
+                    font-size:1rem;
+                    outline: none;
+                    cursor: pointer;
+                    //border:none;
+                    border-radius:3%;
+
+            }
+            
+            div{
+                button{
+                    background-color: palevioletred;
+                    //border:1px solid transparent;
+                    border: 2px solid palevioletred;
+                    margin-left:10px;
+                    width:auto
+                    
+                }
+            }
+            
+
+
+        }
+    }
+}
