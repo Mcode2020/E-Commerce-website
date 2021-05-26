@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/product-description.css">
+<div style="margin:0px 80px 50px;">
+    <h1><%= product.name %></h1>
+    
+    <div style="display:flex; border: 1px solid black;">
+        <img style="margin:0px 20px;" src="<%= product.avatar %>" alt="<%= product.name %>" width="150" height="200">
+        <span style="margin:0px 20px; line-height: 1px; padding-top: 10px;">
+            <h3>Type: <%= product.type %></h3>
+            <h4>Sub type: <%= product.subtype %></h4>
+            <p>Manufacturer: <%= product.manufacturer %></p>
+        </span>
+
+        <div>
+            <form action="/review/create" method="POST">
+                <input type="text" placeholder="Add a review" name="content">
+                <input type="hidden" name="user" value="<%= locals.user._id %>">
+                <input type="hidden" name="product" value="<%= product._id %>">
+                <input type="submit" value="Post Review">
+            </form>
+
+            <%= product.reviews %>
+            <% for(i of product.reviews){ %>
+                <%= i %>
+            <% } %>
+        </div>
+    </div>
+    
+    <h2><%= product.description %></h2>
+    <h2>Rs <%= product.price %></h2>
+    <% if(locals.user){ %>
+        <span id="cart-symbol"><a href="/users/cart/<%= product._id %>">
+        
+            <button id="final-add-to-cart">Add to Cart<i class="fas fa-shopping-cart"></i></button>
+            
+        </a>
+        </span>
+    <% }else{ %>
+        <h4 id="cart-symbol">
+            First <a href="/users/sign-in">Log In</a> to buy the product
+        </h4>
+    <% } %>
+</div>
+
